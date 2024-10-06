@@ -131,6 +131,18 @@ const ChatInterface = () => {
             </button>
           </div>
         );
+      } else if (part.startsWith("**") && part.endsWith("**")) {
+        return (
+          <div key={index}>
+            <strong>{part.slice(2, -2)}</strong>
+          </div>
+        );
+      } else if (part.startsWith("*") && part.endsWith("*")) {
+        return (
+          <div key={index}>
+            <em>{part.slice(1, -1)}</em>
+          </div>
+        );
       } else {
         return (
           <div
